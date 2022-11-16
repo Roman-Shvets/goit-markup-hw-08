@@ -1,0 +1,129 @@
+header {
+    border-bottom: 1px solid var(--header-bottom-border-color);
+}
+
+.header-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-list__nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-list__menu {
+    display: none;
+    gap: 50px;
+    margin-left: 93px;
+   
+    @include for-tablet {
+    display:flex;
+    }
+            
+}
+
+.header-list__address {
+    display: none;
+    
+    @include for-tablet {
+        display: flex;
+        flex-wrap:wrap;
+        flex-direction:column;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    @include for-desktop {
+        flex-direction:row;
+        gap: 50px;
+    }
+
+}
+
+
+
+.header-list__item {
+    display: block;
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    padding: 32px 0;
+    color: var(--title-text-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+&:hover,
+&:focus {
+    color: var(--accent-color);
+}
+
+&--current {
+    color: var(--accent-color);
+}
+
+&--current::after {
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: currentColor;
+}
+}
+
+.header-list__icon {
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-list__contact {
+    @include for-tablet{
+    display: flex;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    padding: 0 0;
+    color: var(--primary-text-color);
+    align-items: center;
+    fill: var(--primary-text-color);
+    transition: color 250ms, fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @include for-desktop{
+        font-size: 14px;
+        line-height: 1.14;
+        padding:32px 0;
+    }
+    
+
+&:hover,
+&:focus {
+    color: var(--accent-color);
+    fill: currentColor;
+}
+}
+
+.header-list__burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 8px;
+ 
+@include for-tablet {
+         display: none;
+}
+
+}
